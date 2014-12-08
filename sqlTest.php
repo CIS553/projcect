@@ -8,7 +8,7 @@
 
     include('dbConnect.php');
         
-        //this tells if the screen is new, or being posted to by itself.
+    //this tells if the screen is new, or being posted to by itself.
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (!empty($_POST["sqlSelectText"])) {
             $sql= $_POST["sqlSelectText"];

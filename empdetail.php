@@ -23,33 +23,10 @@
         $requested_id = null;
     }
 
-    //Handle form data when submitted
-    if (isset($_POST['empname'])){
-        if ($verbose) echo "handling form<br>";
-        include('handleForm.php');
+ include('./createCsv.php');
 
-        //New employee and valid form data
-        if ($requested_id == null && $valid==1)  {
-            if ($verbose) echo "inserting<br>";
-            include('insert.php');
-            ob_clean();
-            header('Location: ./submitted.php?id=' . $_empid);
-            exit();
-            
-        }
-        
-        //Existing employee and valid form data
-        if ($requested_id != null && $valid==1){
-            if ($verbose) echo "updating<br>";
-            include('update.php');
-        }
-        
-        //HANDLE INVALID DATA HERE
-        if ($valid==0){ if ($verbose) echo "Invalid Data"; }
-        
-    }
-        
 ?>
+
     
 <!-- Header Banner-->
 <?php
@@ -233,7 +210,12 @@
     <p> 
         <button class="submitbutton"
                 onclick="window.location='./addEmployee.php?id=<?php echo $requested_id; ?>';">
-            Update Employee Information</button><br><br>
+            Update Employee Information</button>
+        
+        <button class="submitbutton"
+                onclick="window.open('./downloadCsv.php');">
+            Download CSV</button>        
+        <br><br>
     </p>    
 
     </body>

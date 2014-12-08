@@ -1,9 +1,12 @@
-× close edit hex	TEXT viewer: /waffleoctopus.com/cis553/style.css
 @charset "utf-8";
 /* CSS Document */
 
+
 body{
  background-color:#FFFFFF;
+ margin:0;
+ padding:0;
+ overflow-x: hidden;
 }
 
 .currentpage{
@@ -69,6 +72,10 @@ body{
 #odd{
     padding-top:2px;
     background-color:rgba(204, 204, 255, 0.1);
+    overflow-x: hidden;
+    margin:0;
+    padding-right:0;
+    padding-left:0;
 }
 
 #even{

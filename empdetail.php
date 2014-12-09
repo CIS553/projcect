@@ -1,4 +1,3 @@
-
 <!DOCTYPE HTML>
 
 <html> 
@@ -36,8 +35,6 @@
     
 <body>
 
-
-    
     <h3>Employee Detail</h3>
 
     <br>
@@ -214,10 +211,12 @@
         
         <button class="submitbutton"
                 onclick="window.open('./downloadCsv.php');">
-            Download CSV</button>        
+            Download CSV</button>
+        <?php $delLink="'./deleteEmployee.php?id=".$requested_id."'"; ?>
+        <button class="submitbutton"
+                onclick="if(confirm('Are you sure you wish to delete this employee?') == true) {window.location=<?php echo $delLink; ?>;}"> Delete Employee</button>  
         <br><br>
     </p>    
 
     </body>
-    
 </html>

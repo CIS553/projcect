@@ -2,12 +2,13 @@
         var table = document.getElementById(tableId);
         var row = table.insertRow(-1);
         var rowCount = table.rows.length;
-        var alphanumericPattern = '[a-zA-Z0-9 ]+';
+        var alphanumericPattern = "[a-zA-Z0-9.' ]+";
+        var letterOnlyPattern = "[a-zA-Z.' ]+";
         
         if (tableId=="skills"){
             var cell1 = row.insertCell(0);
             var cell2 = row.insertCell(1);
-            cell1.innerHTML = '<input type="text"  required name="empskill[]">';
+            cell1.innerHTML = '<input type="text" maxlength="100" required name="empskill[]">';
             cell2.innerHTML = "<select required name='skilllevel[]'><option value='1'>Low - 1</option><option value='2'>2</option> <option value='3'>3</option><option value='4'>4</option><option value='5'>5</option><option value='6'>6</option><option value='7'>7</option><option value='8'>8</option><option value='9'>9</option><option value='10'>High - 10</option></select>";
         }
         
@@ -25,13 +26,13 @@
             
             cell1.innerHTML = '<input type="date" name="cwhstart[]" required value="">';
             cell2.innerHTML = '<input type="date" name="cwhend[]" value="">';
-            cell3.innerHTML = '<input type="text" name="cwhtitle[]" required pattern="'+alphanumericPattern+'" value="">';
-            cell4.innerHTML = '<input type="text" name="cwhcountry[]" required pattern="'+alphanumericPattern+'" value="">';
-            cell5.innerHTML = '<input type="text" name="cwhdescription[]" required pattern="'+alphanumericPattern+'" value="">';
-            cell6.innerHTML = '<input type="text" name="cwhlevel[]" required pattern="'+alphanumericPattern+'" value="">';
-            cell7.innerHTML = '<input type="text" name="cwhregion[]" required pattern="'+alphanumericPattern+'"  value="">';
-            cell8.innerHTML = '<input type="text" name="cwhskillteam[]" required pattern="'+alphanumericPattern+'"  value="">';
-            cell9.innerHTML = '<input type="text" name="cwhskillsused[]" required pattern="'+alphanumericPattern+'"  value="">';
+            cell3.innerHTML = '<input type="text" name="cwhtitle[]" maxlength="100" required pattern="'+alphanumericPattern+'" value="">';
+            cell4.innerHTML = '<input type="text" name="cwhcountry[]" maxlength="100" required pattern="'+letterOnlyPattern+'" value="">';
+            cell5.innerHTML = '<input type="text" name="cwhdescription[]" maxlength="500" required pattern="'+alphanumericPattern+'" value="">';
+            cell6.innerHTML = '<input type="text" name="cwhlevel[]" maxlength="100" required pattern="'+alphanumericPattern+'" value="">';
+            cell7.innerHTML = '<input type="text" name="cwhregion[]" maxlength="100" required pattern="'+alphanumericPattern+'"  value="">';
+            cell8.innerHTML = '<input type="text" name="cwhskillteam[]" maxlength="100" required pattern="'+alphanumericPattern+'"  value="">';
+            cell9.innerHTML = '<input type="text" name="cwhskillsused[]" maxlength="100" required pattern="'+alphanumericPattern+'"  value="">';
         }
         
             if (tableId=="nonworkTable"){
@@ -45,11 +46,11 @@
             
             cell1.innerHTML = '<input type="date" name="ncwhstart[]" required value="">';
             cell2.innerHTML = '<input type="date" name="ncwhend[]" value="">';
-            cell3.innerHTML = '<input type="text" name="ncwhtitle[]" required pattern="'+alphanumericPattern+'" value="">';
-            cell4.innerHTML = '<input type="text" name="ncwhcompany[]" required pattern="'+alphanumericPattern+'" value="">';
-            cell5.innerHTML = '<input type="text" name="ncwhdescription[]" required pattern="'+alphanumericPattern+'" value="">';
-            cell6.innerHTML = '<input type="text" name="ncwhskillteam[]" required pattern="'+alphanumericPattern+'" value="">';
-            cell7.innerHTML = '<input type="text" name="ncwhskillsused[]" required pattern="'+alphanumericPattern+'" value="">';
+            cell3.innerHTML = '<input type="text" name="ncwhtitle[]" maxlength="100" required pattern="'+alphanumericPattern+'" value="">';
+            cell4.innerHTML = '<input type="text" name="ncwhcompany[]" maxlength="100" required pattern="'+alphanumericPattern+'" value="">';
+            cell5.innerHTML = '<input type="text" name="ncwhdescription[]" maxlength="500" required pattern="'+alphanumericPattern+'" value="">';
+            cell6.innerHTML = '<input type="text" name="ncwhskillteam[]" maxlength="100" required pattern="'+alphanumericPattern+'" value="">';
+            cell7.innerHTML = '<input type="text" name="ncwhskillsused[]" maxlength="100" required pattern="'+alphanumericPattern+'" value="">';
         }
             if (tableId=="educationTable"){
             var cell1 = row.insertCell(0);
@@ -61,9 +62,9 @@
             
             cell1.innerHTML = '<input type="date" name="edstart[]" value="">';
             cell2.innerHTML = '<input type="date" name="edend[]" value="">';
-            cell3.innerHTML = '<input type="text" name="edschool[]" value="">';
-            cell4.innerHTML = '<input type="text" name="eddegree[]" value="">';
-            cell5.innerHTML = '<input type="text" name="edmajor[]" value="">';
-            cell6.innerHTML = '<input type="text" name="edminor[]" value="">';
+            cell3.innerHTML = '<input type="text" name="edschool[]" maxlength="100" value="">';
+            cell4.innerHTML = '<input type="text" name="eddegree[]" maxlength="100" value="">';
+            cell5.innerHTML = '<input type="text" name="edmajor[]" maxlength="100" value="">';
+            cell6.innerHTML = '<input type="text" name="edminor[]" maxlength="100" value="">';
         }
     }            

@@ -54,7 +54,8 @@
 
 	//VALIDATE DATA entered
         //added to pattern input attributes as RegEx's for validation/formatting assistance.
-        $alphanumericPattern = '[a-zA-Z0-9 ]+';
+        $alphanumericPattern = "[a-zA-Z0-9.' ]+";
+        $letterOnlyPattern = "[a-zA-Z.' ]+";
         
 ?>
     
@@ -84,23 +85,23 @@
             <div class="dataentry">
                 
                 Name:<br>
-                <input type="text" name="empname" required pattern="<?php echo $alphanumericPattern; ?>" value="<?php echo $empname ?>">
+                <input type="text" name="empname" maxlength="50" required pattern="<?php echo $letterOnlyPattern; ?>" value="<?php echo $empname ?>">
                 <br><br>
-                Title:<br><input type="text" name="emptitle" required pattern="<?php echo $alphanumericPattern; ?>" value="<?php echo $emptitle ?>">
+                Title:<br><input type="text" name="emptitle" maxlength="100" required pattern="<?php echo $alphanumericPattern; ?>" value="<?php echo $emptitle ?>">
                 <br><br>
-                Country:<br><input type="text" name="empcountry" required pattern="<?php echo $alphanumericPattern; ?>" value="<?php echo $empcountry ?>">
+                Country:<br><input type="text" name="empcountry" maxlength="100" required pattern="<?php echo $letterOnlyPattern; ?>" value="<?php echo $empcountry ?>">
                 <br><br>
-                Email:<br><input type="email" name="empemail" required  value="<?php echo $empemail ?>">
+                Email:<br><input type="email" name="empemail" maxlength="50" required  value="<?php echo $empemail ?>">
                 <br><br>
-                Level:<br><input type="text" name="emplevel" required pattern="<?php echo $alphanumericPattern; ?>" value="<?php echo $emplevel ?>">
+                Level:<br><input type="text" name="emplevel" maxlength="100" required pattern="<?php echo $alphanumericPattern; ?>" value="<?php echo $emplevel ?>">
                 <br><br>
                 Hire Date:<br><input type="date" name="emphiredate" required value="<?php echo $emphiredate ?>">
                 <br><br>
-                Region:<br><input type="text" name="empregion" required pattern="<?php echo $alphanumericPattern; ?>" value="<?php echo $empregion ?>">
+                Region:<br><input type="text" name="empregion" maxlength="100" required pattern="<?php echo $alphanumericPattern; ?>" value="<?php echo $empregion ?>">
                 <br><br>
-                Supervisor:<br><input type="text" name="empsupervisor" required pattern="<?php echo $alphanumericPattern; ?>" value="<?php echo $empsupervisor ?>">
+                Supervisor:<br><input type="text" name="empsupervisor" maxlength="100" required pattern="<?php echo $letterOnlyPattern; ?>" value="<?php echo $empsupervisor ?>">
                 <br><br>
-                Team:<br><input type="text" name="empteam" required pattern="<?php echo $alphanumericPattern; ?>" value="<?php echo $empteam ?>">
+                Team:<br><input type="text" name="empteam" maxlength="255" required pattern="<?php echo $alphanumericPattern; ?>" value="<?php echo $empteam ?>">
                 <br><br>
             
 
@@ -161,25 +162,25 @@
                             <input type="date" name="cwhend[]" value="<?php echo $cwhend[$a]; ?>">
                         </td>
                         <td>
-                            <input type="text" name="cwhtitle[]" required pattern="<?php echo $alphanumericPattern; ?>" pattern="" value="<?php echo $cwhtitle[$a]; ?>">
+                            <input type="text" name="cwhtitle[]" maxlength="100" required pattern="<?php echo $alphanumericPattern; ?>" pattern="" value="<?php echo $cwhtitle[$a]; ?>">
                         </td>
                         <td>
-                            <input type="text" name="cwhcountry[]" required pattern="<?php echo $alphanumericPattern; ?>" pattern="" value="<?php echo $cwhcountry[$a]; ?>">
+                            <input type="text" name="cwhcountry[]" maxlength="100" required pattern="<?php echo $letterOnlyPattern; ?>" pattern="" value="<?php echo $cwhcountry[$a]; ?>">
                         </td>
                         <td>
-                            <input type="text" name="cwhdescription[]" required pattern="<?php echo $alphanumericPattern; ?>" pattern="[a-zA-Z0-9]+" value="<?php echo $cwhdescription[$a]; ?>">
+                            <input type="text" name="cwhdescription[]" maxlength="500" required pattern="<?php echo $alphanumericPattern; ?>" pattern="[a-zA-Z0-9]+" value="<?php echo $cwhdescription[$a]; ?>">
                         </td>
                         <td>
-                            <input type="text" name="cwhlevel[]"  required pattern="<?php echo $alphanumericPattern; ?>" value="<?php echo $cwhlevel[$a]; ?>">
+                            <input type="text" name="cwhlevel[]" maxlength="100"  required pattern="<?php echo $alphanumericPattern; ?>" value="<?php echo $cwhlevel[$a]; ?>">
                         </td>
                         <td>
-                            <input type="text" name="cwhregion[]"  required pattern="<?php echo $alphanumericPattern; ?>" value="<?php echo $cwhregion[$a]; ?>">
+                            <input type="text" name="cwhregion[]" maxlength="100"  required pattern="<?php echo $alphanumericPattern; ?>" value="<?php echo $cwhregion[$a]; ?>">
                         </td>
                         <td>
-                            <input type="text" name="cwhskillteam[]"  required pattern="<?php echo $alphanumericPattern; ?>" value="<?php echo $cwhskillteam[$a]; ?>">
+                            <input type="text" name="cwhskillteam[]" maxlength="100"  required pattern="<?php echo $alphanumericPattern; ?>" value="<?php echo $cwhskillteam[$a]; ?>">
                         </td>
                         <td>
-                            <input type="text" name="cwhskillsused[]"  required pattern="<?php echo $alphanumericPattern; ?>" value="<?php echo $cwhskillsused[$a]; ?>">
+                            <input type="text" name="cwhskillsused[]" maxlength="100"  required pattern="<?php echo $alphanumericPattern; ?>" value="<?php echo $cwhskillsused[$a]; ?>">
                         </td>
 
                     </tr>                    
@@ -210,11 +211,11 @@
                     <tr>
                         <td><input type="date" name="ncwhstart[]" required value="<?php echo $ncwhstart[$a]; ?>"></td>
                         <td><input type="date" name="ncwhend[]" value="<?php echo $ncwhend[$a]; ?>"></td>
-                        <td><input type="text" name="ncwhtitle[]" required pattern="<?php echo $alphanumericPattern; ?>" value="<?php echo $ncwhtitle[$a]; ?>"></td>
-                        <td><input type="text" name="ncwhcountry[]" required pattern="<?php echo $alphanumericPattern; ?>" value="<?php echo $ncwhcompany[$a]; ?>"></td>
-                        <td><input type="text" name="ncwhdescription[]" required pattern="<?php echo $alphanumericPattern; ?>" value="<?php echo $ncwhdescription[$a]; ?>"></td>
-                        <td><input type="text" name="ncwhskillteam[]" required pattern="<?php echo $alphanumericPattern; ?>" value="<?php echo $ncwhskillteam[$a]; ?>"></td>
-                        <td><input type="text" name="ncwhskillsused[]" required pattern="<?php echo $alphanumericPattern; ?>" value="<?php echo $ncwhskillsused[$a]; ?>"></td>
+                        <td><input type="text" name="ncwhtitle[]" maxlength="100" required pattern="<?php echo $alphanumericPattern; ?>" value="<?php echo $ncwhtitle[$a]; ?>"></td>
+                        <td><input type="text" name="ncwhcountry[]" maxlength="100" required pattern="<?php echo $alphanumericPattern; ?>" value="<?php echo $ncwhcompany[$a]; ?>"></td>
+                        <td><input type="text" name="ncwhdescription[]" maxlength="500" required pattern="<?php echo $alphanumericPattern; ?>" value="<?php echo $ncwhdescription[$a]; ?>"></td>
+                        <td><input type="text" name="ncwhskillteam[]" maxlength="100" required pattern="<?php echo $alphanumericPattern; ?>" value="<?php echo $ncwhskillteam[$a]; ?>"></td>
+                        <td><input type="text" name="ncwhskillsused[]" maxlength="100" required pattern="<?php echo $alphanumericPattern; ?>" value="<?php echo $ncwhskillsused[$a]; ?>"></td>
 
                     </tr>                    
                     <?php } ?>                    
@@ -243,10 +244,10 @@
                     <tr>
                         <td><input type="date" name="edstart[]" required value="<?php echo $edstart[$a]; ?>"></td>
                         <td><input type="date" name="edend[]" value="<?php echo $edend[$a]; ?>"></td>
-                        <td><input type="text" name="edschool[]" required pattern="<?php echo $alphanumericPattern; ?>" value="<?php echo $edschool[$a]; ?>"></td>
-                        <td><input type="text" name="eddegree[]" required pattern="<?php echo $alphanumericPattern; ?>" value="<?php echo $eddegree[$a]; ?>"></td>
-                        <td><input type="text" name="edmajor[]" required pattern="<?php echo $alphanumericPattern; ?>" value="<?php echo $edmajor[$a]; ?>"></td>
-                        <td><input type="text" name="edminor[]" required pattern="<?php echo $alphanumericPattern; ?>" value="<?php echo $edminor[$a]; ?>"></td>
+                        <td><input type="text" name="edschool[]" maxlength="100" required pattern="<?php echo $letterOnlyPattern; ?>" value="<?php echo $edschool[$a]; ?>"></td>
+                        <td><input type="text" name="eddegree[]" maxlength="100" required pattern="<?php echo $letterOnlyPattern; ?>" value="<?php echo $eddegree[$a]; ?>"></td>
+                        <td><input type="text" name="edmajor[]" maxlength="100" required pattern="<?php echo $letterOnlyPattern; ?>" value="<?php echo $edmajor[$a]; ?>"></td>
+                        <td><input type="text" name="edminor[]" maxlength="100" required pattern="<?php echo $letterOnlyPattern; ?>" value="<?php echo $edminor[$a]; ?>"></td>
                     </tr>                    
                     <?php } ?>                    
                 <!-- additional skill rows added dynamically by javascript -->

@@ -50,7 +50,6 @@ function quoteHandler($postField) {
 
 $sql_profile ="CALL search(".$field1.",".$value1.",".$field2.",".$value2.",".$field3.",".$value3.",".$field4.",".$value4.",".$field5.",".$value5.")";
 
-echo "<br>Executing: <b>". $sql_profile. "<br><br>" ;
         $select_profile = $conn->query($sql_profile);
 
 
